@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موازن المعادلات الكيميائية</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- رأس الصفحة -->
+        <header class="header">
+            <h1>أهلا وسهلا</h1>
+            <div class="welcome-subtitle">
+                <p>قسم الكيمياء</p>
+                <p>تحت رعاية د. نجوى حسين</p>
+            </div>
+        </header>
+
+        <!-- اختيار الكلية -->
+        <section class="college-selection">
+            <h2>اختر الكلية</h2>
+            <div class="college-buttons">
+                <button class="college-btn" data-college="aswan">علوم أسوان</button>
+                <button class="college-btn" data-college="qena">علوم قنا</button>
+                <button class="college-btn" data-college="luxor">علوم الأقصر</button>
+            </div>
+        </section>
+
+        <!-- القسم الرئيسي -->
+        <main id="main-content" style="display: none;">
+            <!-- اختيار المركبات -->
+            <section class="compounds-section">
+                <h2>موازن المعادلات الكيميائية</h2>
+                
+                <div class="input-method">
+                    <div class="method-tabs">
+                        <button class="tab-btn active" data-tab="select">اختر المركبات</button>
+                        <button class="tab-btn" data-tab="manual">أدخل يدويا</button>
+                    </div>
+
+                    <!-- تبويب الاختيار من الجدول -->
+                    <div id="select-tab" class="tab-content active">
+                        <div class="compound-input">
+                            <h3>المواد المتفاعلة</h3>
+                            <div id="reactants-container" class="compounds-container">
+                                <div class="compound-row">
+                                    <input type="text" class="compound-search" placeholder="ابحث عن المركب...">
+                                    <button class="add-compound-btn">+</button>
+                                </div>
+                            </div>
+
+                            <h3>المواد الناتجة</h3>
+                            <div id="products-container" class="compounds-container">
+                                <div class="compound-row">
+                                    <input type="text" class="compound-search" placeholder="ابحث عن المركب...">
+                                    <button class="add-compound-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- تبويب الإدخال اليدوي -->
+                    <div id="manual-tab" class="tab-content">
+                        <textarea id="equation-input" placeholder="مثال: CH4 + O2 → CO2 + H2O" rows="4"></textarea>
+                    </div>
+                </div>
+            </section>
+
+            <!-- قسم الموازنة والحل -->
+            <section class="balancing-section">
+                <button class="balance-btn">موازن المعادلة</button>
+                
+                <!-- عرض الطرق المختلفة -->
+                <div id="methods-container" class="methods-container" style="display: none;">
+                    <h3>طرق الموازنة</h3>
+                    <div class="methods-list">
+                        <!-- سيتم ملء الطرق هنا -->
+                    </div>
+                </div>
+
+                <!-- النتيجة النهائية -->
+                <div id="result-container" class="result-container" style="display: none;">
+                    <h3>المعادلة الموازنة</h3>
+                    <div class="balanced-equation">
+                        <p id="balanced-result"></p>
+                    </div>
+                </div>
+
+                <!-- مساعد الذكاء الاصطناعي -->
+                <div class="ai-assistant-section">
+                    <h3>مساعد ذكي</h3>
+                    <div class="ai-chat">
+                        <div id="ai-messages" class="ai-messages"></div>
+                        <div class="ai-input">
+                            <input type="text" id="ai-question" placeholder="اسأل أي سؤال عن الموازنة...">
+                            <button id="send-ai-btn">إرسال</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="compounds.js"></script>
+    <script src="balancer.js"></script>
+    <script src="ai-assistant.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
